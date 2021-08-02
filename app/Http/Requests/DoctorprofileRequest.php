@@ -22,7 +22,7 @@ class DoctorprofileRequest extends FormRequest
             'Name' => 'required|max:50',
 			'summary' => 'required|max:500',
 			'specialized_at' => 'required',
-			'Image' => 'required'
+		'Image' => 'required'
 			
         ];
     }

@@ -17,7 +17,7 @@
     <div class="form-group">
     <label for="password" class="col-sm-2 control-label"> كلمة المرور</label>
     <div class="col-sm-10 col-md-5">
-      <input type="password" class="form-control" value="{{old('password')}}" id="password" name="password" placeholder="ادخل كلمة المرور للمستخدم">
+      <input type="password" class="form-control" value="{{$item->password}}" id="password" name="password" placeholder="ادخل كلمة المرور للمستخدم">
     </div>
   </div>
   <div class="form-group">

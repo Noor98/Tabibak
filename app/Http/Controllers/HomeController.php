@@ -74,4 +74,14 @@ class HomeController extends Controller
         Session::flash("msg","s: تمت عملية الاضافة بنجاح");
         return redirect("/home/doctor/$id");
     }
+
+    public function new()
+    {
+        $sliders = Slider::where("isdelete",0)->where("status",1)
+            ->limit(15)->orderBy("created_at","desc")->get();
+        $top4Articles = Doctorprofile::where("isdelete",0)->where("status",1)
+            ->limit(4)->orderBy("created_at","desc")->get();
+        
+        return view('new',compact('sliders','top4Articles'));
+    }
 }

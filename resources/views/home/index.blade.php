@@ -7,17 +7,18 @@
 <div class="container">
     
     @if($sliders->count()>0)
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-      <?php $i=0; ?>
+    <div id="carouselExampleControls" class="carousel slide">
+         <?php $i=0; ?>
       @foreach($sliders as $s)
+  <div class="carousel-inner">
+     
     <div class="carousel-item {{$i++==0?'active':''}}">
       <img class="d-block w-100" src="/thumb.php?size=700x329&src=./storage/images/{{$s->Image}}" alt="First slide">
         <div class="carousel-caption d-none d-md-block">
             <h5>{{$s->Title}}</h5>
             <p>{{$s->summary}}</p>
             <p>
-            <a  href="{{$s->Url}}"> للانتقال الي المقال اضغط هنا ^_*</a></p>
+            <a  href="{{$s->Url}}" target="_blank"> للانتقال الي المقال اضغط هنا ^_*</a></p>
       </div>
     </div>
       @endforeach
@@ -50,13 +51,14 @@
          alt="Card image cap"> 
           <div class="card-body">
             <h5 class="card-title">{{$a->Name}}</h5>
-            <p class="card-text">{{$a->summary}}</p>
-            <a href="/home/doctor/{{$a->id}}" class="btn btn-primary">اقرأ المزيد</a>
+            <p class="card-text">{{$a->specialization->Name}}</p>
+            <a href="/home/doctor/{{$a->id}}" style="background-color:#563d7c"   class="btn btn-primary">اقرأ المزيد</a>
           </div>
         </div>
         </div>
         @endforeach
 
     </div>
+    
 </div>
 @endsection

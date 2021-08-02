@@ -25,7 +25,9 @@
         <link href="/nprogress-master/nprogress.css" rel="stylesheet" type="text/css" />
         <!-- END THEME LAYOUT STYLES -->
         <link rel="shortcut icon" href="favicon.ico" /> 
-        @yield("css")
+      @yield("css")
+        
+        
     </head>
 
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-md">
@@ -141,7 +143,7 @@
             <div class="page-footer">
                 <div class="page-footer-inner"> {{date("Y")}} &copy; جميع الحقوق محفوظة
                     
-                    ل Noor And Lamees
+                    <b>  ل نور سليم أبو حصيرة ^_*</b>
                 </div>
                 <div class="scroll-to-top">
                     <i class="icon-arrow-up"></i>
@@ -178,6 +180,7 @@
         <script src="/metronic/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
         <script src="/metronic/assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script> 
         <script src="/nprogress-master/nprogress.js"></script>
+        <!-- -->
         <script>
             $(function(){
                 $(".Confirm").click(function(e){

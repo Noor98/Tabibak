@@ -55,7 +55,8 @@ class DoctorprofileController extends BaseController
     public function edit($id)
     {
         $item = Doctorprofile::find($id);
-        $Image=Doctorprofile::select('Image')->where('id', $id)->get();
+//        $Image=Doctorprofile::select('Image')->where('id', $id)->first();
+//        $Image = $Image->Image;
         //dd($Image);
         if($item == NULL || $item->isdelete){
             Session::flash("msg","e: الرجاء التأكد من الرابط المطلوب");
@@ -100,11 +101,23 @@ class DoctorprofileController extends BaseController
     public function update(DoctorprofileRequest $request, $id)
     {
         $item = Doctorprofile::find($id);
-        $path = $request->file('Image')->store('public/images');
+        
+//        if($request->hasFile('Image'))
+//            return 'has file';
+//        else
+//            return 'dose not has file';
+        if($request->hasFile('Image')){
+            $path = $request->file('Image')->store('public/images');
+            $image = basename($path);
+            $item->Image = $image;
+        }else{
+            unset($request["Image"]);
+        }
+//        $path = $image;
         $item->Name = $request["Name"];
 		$item->summary = $request["summary"];
 		$item->specialized_at = $request["specialized_at"];
-		$item->Image = basename($path);
+		
 		$item->allowcomment = $request["allowcomment"]?1:0;
         $item->status = $request["status"]?1:0;
         $item->updated_by = $this->adminId;

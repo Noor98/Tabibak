@@ -92,7 +92,8 @@ class AdminController extends BaseController
             //$user->email = $request['email'];
             $user->password = bcrypt($request['password']);
             $user->save();
-        }        
+        }
+
         $item->name = $request["name"];
         //$item->email = $request["email"];
         $item->status = $request["status"]?1:0;

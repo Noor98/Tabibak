@@ -55,3 +55,4 @@ Route::get('/home/doctors', 'HomeController@doctors');
 Route::get('/home/doctor/{id}', 'HomeController@doctor');
 Route::post('/home/doctor/{id}', 'HomeController@postcomment');
 
+Route::get('/new', 'HomeController@new');

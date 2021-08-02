@@ -20,7 +20,7 @@
         </select>
     </div>
     <div class="col-sm-4">
-        <input type="submit" value="انطلق" class="btn btn-primary" />
+        <input type="submit" value="انطلق" style="background-color:#846ea7" class="btn btn-primary" />
     </div>
 </form>
 
@@ -31,9 +31,9 @@
             <div class="col-3"><img class="img-fluid" src="/thumb.php?size=436x270&src=./storage/images/{{$a->Image}}"></div>
             <div class="col-9">
             <h5 class="card-title">{{$a->Name}}</h5>
-                <label class="badge  badge-info">{{$a->specialization->Name}}</label>
+                <label style="background-color:#a890ca" class="badge  badge-info">{{$a->specialization->Name}}</label>
         <p class="card-text">{{$a->summary}}</p>
-        <a href="/home/doctor/{{$a->id}}" class="btn btn-primary">اقرأ المزيد</a>
+        <a href="/home/doctor/{{$a->id}}" style="background-color:#563d7c" class="btn btn-primary">اقرأ المزيد</a>
             </div>
         </div>
     </div>

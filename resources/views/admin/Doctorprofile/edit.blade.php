@@ -33,10 +33,10 @@
   <div class="form-group">
     <label for="specialized_at" class="col-sm-2 control-label">التخصص</label>
     <div class="col-sm-5">
-        <select required name="specialized_at" id="specialized_at" class="form-control">
+        <select required name="specialized_at" id="specialized_at" class="form-control" disabled>
             <option value="">اختيار التخصص</option>
             @foreach($specializations as $c)
-                <option {{$c->id==old('specialized_at')?"selected":""}} value="{{$c->id}}">{{$c->Name}}</option>
+                <option {{$c->id==$item->specialized_at?"selected":""}} value="{{$c->id}}">{{$c->Name}}</option>
             @endforeach
         </select>
     </div>
@@ -47,7 +47,7 @@
      <div  class="fileinput fileinput-new" data-provides="fileinput" >
        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px; line-height: 150px;">
           
-           <img src="/storage/images/{{substr($Image,11,45)}}"/>
+           <img src="/storage/images/{{$item->Image}}"/>
                   
 
          </div>
@@ -62,7 +62,7 @@
     <div class="col-sm-offset-2 col-sm-10">
       <div class="checkbox">
         <label>
-          <input {{$item->allowcomment?"checked":""}} name="allowcomment" type="checkbox"> مسموح التعليق
+          <input {{$item->allowComment?"checked":""}} name="allowcomment" type="checkbox"> مسموح التعليق
         </label>
       </div>
     </div>
